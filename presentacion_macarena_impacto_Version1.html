@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Macarena Coloma Tapia | Presentación Impactante</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&family=Fira+Mono&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #190a2c;
+      --color-card: #fff;
+      --color-primary: #16f5d3;
+      --color-secondary: #f441a5;
+      --color-tertiary: #fffd82;
+      --color-accent: #e058fc;
+      --color-shadow: rgba(16, 249, 219, 0.14);
+      --radius: 32px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background: radial-gradient(ellipse at top left, #3d1f7f 0%, #1a073b 100%);
+      font-family: 'Quicksand', 'Montserrat', Arial, sans-serif;
+      color: #fff;
+      overflow-x: hidden;
+      position: relative;
+    }
+    .network-bg {
+      position: fixed;
+      z-index: 0;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      pointer-events: none;
+      opacity: 0.92;
+    }
+    .main-card {
+      position: relative;
+      z-index: 2;
+      max-width: 950px;
+      margin: 56px auto;
+      background: linear-gradient(120deg, rgba(255,255,255,0.13) 0%, rgba(22,245,211,0.09) 100%);
+      box-shadow: 0 8px 40px 0 #00ffe7a2, 0 1.5px 8px #f441a552;
+      border-radius: var(--radius);
+      backdrop-filter: blur(6px);
+      padding: 44px 5vw 32px 5vw;
+      overflow: hidden;
+      border: 2.5px solid var(--color-primary);
+    }
+    .profile-flex {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 48px;
+      margin-bottom: 34px;
+    }
+    .avatar-glow {
+      flex: 0 0 170px;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-secondary) 10%, var(--color-primary) 90%);
+      box-shadow:
+        0 0 0 9px #fff3,
+        0 0 38px 14px var(--color-primary),
+        0 0 90px 18px var(--color-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: avatarPulse 2.2s infinite alternate;
+    }
+    @keyframes avatarPulse {
+      0% { box-shadow: 0 0 0 9px #fff3, 0 0 38px 14px var(--color-primary), 0 0 90px 18px var(--color-secondary);}
+      100% { box-shadow: 0 0 0 13px #fff5, 0 0 55px 24px var(--color-primary), 0 0 120px 26px var(--color-secondary);}
+    }
+    .avatar-glow img {
+      width: 87%;
+      height: 87%;
+      border-radius: 50%;
+      border: 3.5px solid #fff;
+      box-shadow: 0 1px 12px #fff8;
+      background: #fff;
+      object-fit: cover;
+    }
+    .intro {
+      flex: 1 1 350px;
+      min-width: 270px;
+    }
+    .name {
+      font-size: 2.7rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      text-shadow: 0 2px 32px var(--color-secondary);
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+    .title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--color-tertiary);
+      background: linear-gradient(90deg, var(--color-secondary), var(--color-primary), var(--color-accent));
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+    }
+    .contact {
+      font-size: 1.05rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 26px;
+      color: var(--color-accent);
+      margin-bottom: 7px;
+      text-shadow: 0 2px 8px #0ff9;
+    }
+    .contact a {
+      color: inherit;
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+    .quote {
+      font-style: italic;
+      font-size: 1.03rem;
+      color: var(--color-tertiary);
+      background: rgba(44,255,230,0.10);
+      border-left: 5px solid var(--color-accent);
+      padding: 12px 21px;
+      border-radius: 0 20px 20px 0;
+      margin: 18px 0 0 0;
+      filter: drop-shadow(0 0 8px var(--color-primary));
+      animation: fadeIn 1.7s 1s both;
+    }
+    @keyframes fadeIn { 0%{opacity:0;} 100%{opacity:1;} }
+
+    .sections {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 18px;
+    }
+    @media (max-width: 900px) { .sections { grid-template-columns: 1fr; } }
+    .card {
+      background: linear-gradient(120deg, #2c0e4b 55%, #1bc9c4 100%);
+      border-radius: 22px;
+      box-shadow: 0 1px 18px #0ff1, 0 0.6px 6px #f441a555;
+      padding: 28px 20px 18px 22px;
+      margin-bottom: 10px;
+      border: 2px solid var(--color-primary);
+      position: relative;
+      z-index: 2;
+      transition: transform .17s;
+      overflow: hidden;
+    }
+    .card:hover {
+      transform: translateY(-5px) scale(1.033);
+      box-shadow: 0 20px 48px #f441a588, 0 4px 40px #16f5d3bb;
+      border-color: var(--color-secondary);
+    }
+    .card .card-title {
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: var(--color-tertiary);
+      margin-bottom: 14px;
+      text-shadow: 0 1.5px 10px #fff6, 0 1.5px 12px #f441a555;
+      letter-spacing: 0.5px;
+    }
+    .timeline {
+      margin: 0 0 0 10px;
+      padding: 0;
+      list-style: none;
+      border-left: 3px dashed var(--color-primary);
+    }
+    .timeline li {
+      margin-bottom: 25px;
+      position: relative;
+      padding-left: 18px;
+    }
+    .timeline li:before {
+      content: '';
+      position: absolute;
+      left: -12px;
+      top: 3px;
+      width: 15px;
+      height: 15px;
+      background: radial-gradient(circle at 40% 40%, var(--color-accent) 0%, #fffd82 85%, #fff0 100%);
+      border-radius: 50%;
+      border: 2.5px solid #fff;
+      box-shadow: 0 0 11px #f441a5cc;
+    }
+    .job-title {
+      font-weight: 700;
+      color: var(--color-primary);
+      filter: drop-shadow(0 0 4px #f441a5aa);
+    }
+    .company {
+      font-size: 1em;
+      color: var(--color-accent);
+      font-style: italic;
+    }
+    .date {
+      font-size: 0.95em;
+      color: #fff2;
+    }
+    .desc {
+      font-size: 1em;
+      color: #fff;
+      filter: drop-shadow(0 0 2px #fff8);
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      margin-top: 7px;
+    }
+    .skill-chip {
+      background: linear-gradient(90deg, var(--color-secondary), var(--color-primary) 80%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 7px 16px;
+      font-size: 1em;
+      font-weight: 700;
+      box-shadow: 0 2px 9px #f441a566, 0 0.5px 3px #fff6;
+      letter-spacing: 0.03em;
+      filter: brightness(1.2);
+      border: 1.2px solid #fff5;
+      animation: popIn 0.7s cubic-bezier(.47,1.64,.41,.8) backwards;
+    }
+    @keyframes popIn {
+      from { transform: scale(0.86);}
+      to { transform: scale(1);}
+    }
+    .cert-list, .achiev-list {
+      margin: 0;
+      padding: 0 0 0 18px;
+      color: var(--color-tertiary);
+      font-weight: 600;
+    }
+    .cert-list li, .achiev-list li {
+      margin-bottom: 10px;
+      filter: drop-shadow(0 0 3px #fff5);
+    }
+    /* Neon sparkles effect */
+    .sparkle {
+      position: absolute;
+      pointer-events: none;
+      z-index: 100;
+      width: 13px; height: 13px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #fff 10%, #fffd82 50%, #f441a5 100%);
+      filter: blur(0.5px) brightness(1.6);
+      box-shadow: 0 0 20px 9px #fff, 0 0 30px 18px #16f5d3cc;
+      animation: sparkleFade 1.4s linear forwards;
+      opacity: 0.85;
+    }
+    @keyframes sparkleFade {
+      0% { opacity: 0.88; }
+      80% { opacity: 1;}
+      100% { opacity: 0; transform: scale(1.7);}
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      .main-card { padding: 10px 1vw 14px 1vw;}
+      .profile-flex { flex-direction: column; gap: 28px;}
+      .avatar-glow { margin-bottom: 18px; }
+      .sections { gap: 12px;}
+    }
+  </style>
+</head>
+<body>
+  <canvas class="network-bg" id="network"></canvas>
+  <div class="main-card">
+    <div class="profile-flex">
+      <div class="avatar-glow">
+        <!-- Cambia el src por tu foto si quieres -->
+        <img src="https://ui-avatars.com/api/?name=Macarena+Coloma&color=f441a5&background=16f5d3" alt="Macarena Coloma Foto">
+      </div>
+      <div class="intro">
+        <div class="name">Macarena Coloma Tapia</div>
+        <div class="title">Scrum Master Certificada | Product Owner | Líder en Metodologías Ágiles</div>
+        <div class="contact">
+          <span>📱 +56 952108573</span>
+          <span>✉️ <a href="mailto:Macarenacolomatapia.mc@gmail.com">Macarenacolomatapia.mc@gmail.com</a></span>
+          <span>🔗 <a href="https://linkedin.com/in/macarena-coloma-870264210" target="_blank">LinkedIn</a></span>
+          <span>📍 Limache, Valparaíso, Chile</span>
+        </div>
+        <div class="quote">
+          "La agilidad no es una metodología, es una mentalidad. Mi pasión es ayudar a los equipos a descubrir su máximo potencial a través de la colaboración, la adaptabilidad y la entrega continua de valor."
+        </div>
+      </div>
+    </div>
+    <div class="sections">
+      <!-- Experiencia -->
+      <div class="card">
+        <div class="card-title">Experiencia Profesional</div>
+        <ul class="timeline">
+          <li>
+            <div class="job-title">Fundadora y Líder Técnica</div>
+            <div class="company">MIFAEL WEB STUDIO</div>
+            <div class="date">2021 - Presente</div>
+            <div class="desc">Desarrollo web ágil, liderazgo de equipos y gestión de proyectos Scrum/Kanban.</div>
+          </li>
+          <li>
+            <div class="job-title">Líder de Proyectos Ágiles</div>
+            <div class="company">Ilustre Municipalidad de Valparaíso</div>
+            <div class="date">2021 - 2025</div>
+            <div class="desc">Facilitación de transformación ágil, coaching y métricas de valor.</div>
+          </li>
+          <li>
+            <div class="job-title">Analista de Proyectos Ágiles</div>
+            <div class="company">Ilustre Municipalidad de Valparaíso</div>
+            <div class="date">2017 - 2021</div>
+            <div class="desc">Gestión de backlog, documentación ágil y coordinación de stakeholders.</div>
+          </li>
+          <li>
+            <div class="job-title">Encargada de Proyectos</div>
+            <div class="company">Ilustre Municipalidad de Valparaíso</div>
+            <div class="date">2013 - 2017</div>
+            <div class="desc">Gestión iterativa de proyectos y equipos multifuncionales.</div>
+          </li>
+        </ul>
+      </div>
+      <!-- Formación y Certificaciones -->
+      <div class="card">
+        <div class="card-title">Formación & Certificaciones</div>
+        <ul style="margin-bottom: 12px; padding-left:12px;">
+          <li><strong>Ingeniería en Ejecución Informática</strong><br>
+            <span class="company">Universidad de Las Américas (UDLA)</span> <span class="date">(En curso)</span>
+          </li>
+          <li><strong>Técnico Profesional en Preparación Física</strong><br>
+            <span class="company">DUOC UC</span> <span class="date">(Completado)</span>
+          </li>
+        </ul>
+        <div style="margin-top:15px;">
+          <strong style="color:var(--color-tertiary)">Certificaciones:</strong>
+          <ul class="cert-list">
+            <li>Scrum Master Fundamentals - Certiprof</li>
+            <li>Scrum Master Certified - Certiprof</li>
+            <li>Product Owner Certified - Certiprof</li>
+            <li>Design Thinking Certified - Fundación Telefónica y SENCE</li>
+            <li>WordPress Certified - Fundación Telefónica y SENCE</li>
+            <li>Fundamentos en Ciberseguridad - USACH</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Competencias -->
+      <div class="card">
+        <div class="card-title">Competencias Técnicas</div>
+        <div>
+          <div style="font-weight: 700; color: var(--color-tertiary); margin-bottom:6px;">Metodologías & Liderazgo</div>
+          <div class="skills">
+            <span class="skill-chip">Scrum Master</span>
+            <span class="skill-chip">Product Owner</span>
+            <span class="skill-chip">Kanban</span>
+            <span class="skill-chip">Lean</span>
+            <span class="skill-chip">SAFe (básico)</span>
+            <span class="skill-chip">Coaching de Equipos</span>
+            <span class="skill-chip">Facilitación Ágil</span>
+            <span class="skill-chip">Servant Leadership</span>
+            <span class="skill-chip">Gestión del cambio</span>
+          </div>
+          <div style="font-weight: 700; color: var(--color-tertiary); margin:12px 0 6px 0;">Tecnologías & Herramientas</div>
+          <div class="skills">
+            <span class="skill-chip">Jira</span>
+            <span class="skill-chip">Confluence</span>
+            <span class="skill-chip">Azure DevOps</span>
+            <span class="skill-chip">Trello</span>
+            <span class="skill-chip">Miro/Mural</span>
+            <span class="skill-chip">WordPress</span>
+            <span class="skill-chip">DevOps básico</span>
+            <span class="skill-chip">Bitbucket</span>
+            <span class="skill-chip">Git</span>
+            <span class="skill-chip">Microsoft Office</span>
+          </div>
+        </div>
+      </div>
+      <!-- Logros -->
+      <div class="card">
+        <div class="card-title">Logros Destacados</div>
+        <ul class="achiev-list">
+          <li><strong>Transformación Ágil:</strong> Implementación de Scrum en equipos gubernamentales, mejorando entrega de valor en <b>40%</b>.</li>
+          <li><strong>Emprendimiento Tecnológico:</strong> Fundé MIFAEL WEB STUDIO aplicando agilidad desde el inicio.</li>
+          <li><strong>Mejora Continua:</strong> Prácticas de retrospectiva logrando <b>25%</b> de mejora en satisfacción de equipos.</li>
+          <li><strong>Liderazgo Transformacional:</strong> Coaching exitoso de más de <b>20 profesionales</b> en adopción ágil.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script>
+    // ----- INTERACTIVE NETWORK ANIMATION -----
+    const canvas = document.getElementById('network');
+    const ctx = canvas.getContext('2d');
+    let W = window.innerWidth, H = window.innerHeight;
+    function resize() {
+      W = window.innerWidth; H = window.innerHeight;
+      canvas.width = W; canvas.height = H;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    // Node & Edge params
+    const NODES = 38, 
+          DIST = 120, 
+          CURSOR_DIST = 190,
+          DOT_MIN = 2, DOT_MAX = 5;
+    let nodes = [];
+    for (let i = 0; i < NODES; i++) {
+      nodes.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        vx: (Math.random()-0.5) * 0.7,
+        vy: (Math.random()-0.5) * 0.7,
+        r: DOT_MIN + Math.random()*(DOT_MAX-DOT_MIN)
+      });
+    }
+    let mouse = { x: W/2, y: H/2, active: false };
+
+    canvas.addEventListener('mousemove', e => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+      mouse.active = true;
+      // Sparkle effect
+      sparkle(e.clientX, e.clientY);
+    });
+    canvas.addEventListener('mouseleave', e => { mouse.active = false; });
+
+    function sparkle(x, y) {
+      let s = document.createElement('div');
+      s.className = 'sparkle';
+      s.style.left = (x-8)+'px';
+      s.style.top = (y-8)+'px';
+      document.body.appendChild(s);
+      setTimeout(()=>{s.remove();}, 1400);
+    }
+
+    function draw() {
+      ctx.clearRect(0,0,W,H);
+
+      // Draw connections
+      for(let i=0;i<NODES;i++) {
+        for(let j=i+1;j<NODES;j++) {
+          let dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y;
+          let d = Math.sqrt(dx*dx+dy*dy);
+          if(d < DIST) {
+            ctx.save();
+            ctx.globalAlpha = 0.12 + 0.13*(1-d/DIST);
+            let grad = ctx.createLinearGradient(nodes[i].x, nodes[i].y, nodes[j].x, nodes[j].y);
+            grad.addColorStop(0, '#f441a5');
+            grad.addColorStop(0.5, '#16f5d3');
+            grad.addColorStop(1, '#fffd82');
+            ctx.strokeStyle = grad;
+            ctx.lineWidth = 1.7;
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.stroke();
+            ctx.restore();
+          }
+        }
+        // Cursor node effect
+        if(mouse.active) {
+          let dx = nodes[i].x - mouse.x, dy = nodes[i].y - mouse.y;
+          let d = Math.sqrt(dx*dx+dy*dy);
+          if(d < CURSOR_DIST) {
+            ctx.save();
+            ctx.globalAlpha = 0.13 + 0.17*(1-d/CURSOR_DIST);
+            ctx.strokeStyle = '#fff2';
+            ctx.lineWidth = 1.4;
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.stroke();
+            ctx.restore();
+          }
+        }
+      }
+      // Draw dots
+      for(let n of nodes) {
+        ctx.save();
+        let grad = ctx.createRadialGradient(n.x, n.y, 0.1, n.x, n.y, n.r*2.7);
+        grad.addColorStop(0, "#fff");
+        grad.addColorStop(0.5, "#16f5d3");
+        grad.addColorStop(1, "#f441a5");
+        ctx.fillStyle = grad;
+        ctx.globalAlpha = 0.7;
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.r, 0, 2*Math.PI);
+        ctx.shadowColor = "#fff";
+        ctx.shadowBlur = 13;
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+    function update() {
+      for(let n of nodes) {
+        n.x += n.vx; n.y += n.vy;
+        if(n.x < 0 || n.x > W) n.vx *= -1;
+        if(n.y < 0 || n.y > H) n.vy *= -1;
+      }
+    }
+    function animate() {
+      update();
+      draw();
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+</body>
+</html>
